@@ -1,3 +1,5 @@
+/* Estilos fofos com tema de moranguinho */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,84 +7,325 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ffe6e6, #ffcccc);
+    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+    min-height: 100vh;
+    background: #fff0f0;
+    overflow: hidden;
+}
+
+/* ===== TELA INICIAL ===== */
+
+.tela-inicial {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: 
+        radial-gradient(ellipse at 20% 80%, #ffe0e0 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, #ffd0d0 0%, transparent 50%),
+        #fff5f5;
+    position: relative;
 }
 
-.container {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 30px;
-    padding: 30px 40px 40px 40px;
-    box-shadow: 0 15px 40px rgba(200, 50, 50, 0.2);
-    max-width: 700px;
-    width: 100%;
+/* Morango grande que flutua */
+.morango-gigante {
+    font-size: 100px;
+    animation: flutuar 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 30px rgba(255, 50, 50, 0.2));
+    margin-bottom: 10px;
+}
+
+/* Animação de flutuação do morango */
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0px) rotate(-2deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+/* Título principal */
+.titulo-principal {
+    font-size: 3.5rem;
+    color: #442233;
     text-align: center;
-}
-
-h1 {
-    font-size: 2.2rem;
-    color: #cc2244;
     margin-bottom: 5px;
-    text-shadow: 2px 2px 0px rgba(255, 100, 100, 0.2);
+    letter-spacing: 2px;
 }
 
-.subtitulo {
-    font-size: 1.1rem;
-    color: #aa5577;
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.canvas-wrapper {
-    background: #ffebee;
+/* Parte "Validação" em destaque */
+.titulo-principal .destaque {
+    color: #dd3355;
+    background: rgba(255, 200, 200, 0.3);
+    padding: 0 15px;
     border-radius: 20px;
-    padding: 10px;
-    box-shadow: inset 0 0 20px rgba(200, 50, 50, 0.1);
-    margin-bottom: 15px;
+    display: inline-block;
+    transform: rotate(-1deg);
 }
 
+/* Subtítulo */
+.subtitulo-inicial {
+    font-size: 1.3rem;
+    color: #996677;
+    margin-bottom: 25px;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 8px 25px;
+    border-radius: 30px;
+    border: 2px dashed #ffb0b0;
+}
+
+/* Caixa de descrição */
+.descricao {
+    max-width: 500px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px 30px;
+    border-radius: 30px;
+    border: 3px solid #ffcdcd;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(200, 50, 50, 0.08);
+}
+
+.descricao p {
+    color: #554444;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.descricao p:last-child {
+    margin-bottom: 0;
+}
+
+/* Botão de iniciar */
+.btn-iniciar {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff5577, #dd3355);
+    color: white;
+    font-size: 1.4rem;
+    font-family: inherit;
+    padding: 18px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(200, 50, 50, 0.3);
+    transition: all 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Efeito ao passar o mouse no botão */
+.btn-iniciar:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(200, 50, 50, 0.4);
+    background: linear-gradient(135deg, #ff6688, #ee3355);
+}
+
+/* Efeito ao clicar no botão */
+.btn-iniciar:active {
+    transform: translateY(0px) scale(0.98);
+}
+
+/* Decorações espalhadas pela tela */
+.decoracao-1 {
+    position: absolute;
+    top: 8%;
+    left: 6%;
+    font-size: 40px;
+    animation: girar 20s linear infinite;
+}
+
+.decoracao-2 {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    font-size: 45px;
+    animation: girar 25s linear infinite reverse;
+}
+
+.decoracao-3 {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    font-size: 30px;
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.decoracao-4 {
+    position: absolute;
+    bottom: 20%;
+    left: 8%;
+    font-size: 35px;
+    animation: flutuar 3.5s ease-in-out infinite 1s;
+}
+
+/* Animação de girar para as decorações */
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== TELA DO JOGO ===== */
+
+.tela-jogo {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: 
+        radial-gradient(ellipse at 30% 70%, #ffe8e8 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 30%, #ffdddd 0%, transparent 60%),
+        #fff5f5;
+}
+
+/* Cabeçalho do jogo */
+.header-jogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 650px;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    border: 2px solid #ffcdcd;
+}
+
+/* Botão de voltar */
+.btn-voltar {
+    color: #dd3355;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 8px 15px;
+    border-radius: 12px;
+    background: rgba(255, 200, 200, 0.3);
+    transition: background 0.3s;
+}
+
+.btn-voltar:hover {
+    background: rgba(255, 200, 200, 0.6);
+}
+
+/* Título do jogo */
+.titulo-jogo {
+    font-size: 1.1rem;
+    color: #442233;
+    margin: 0;
+}
+
+/* Status de validação */
+.status-jogo {
+    background: #ffdddd;
+    padding: 6px 16px;
+    border-radius: 20px;
+    color: #dd3355;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 2px solid #ffbbbb;
+}
+
+/* Área do canvas */
+.canvas-wrapper {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    padding: 12px;
+    box-shadow: 0 10px 40px rgba(200, 50, 50, 0.1);
+    border: 3px solid #ffcdcd;
+    max-width: 650px;
+    width: 100%;
+}
+
+/* O canvas onde o morango anda */
 canvas {
     display: block;
     width: 100%;
-    max-width: 600px;
     height: auto;
-    margin: 0 auto;
-    border-radius: 12px;
+    border-radius: 15px;
     background: #fff5f5;
 }
 
-.info {
+/* Informações na parte de baixo */
+.controles {
+    width: 100%;
+    max-width: 650px;
+    margin-top: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
-    background: #fff0f0;
-    border-radius: 15px;
-    font-size: 0.95rem;
-    color: #884466;
-}
-
-#status {
-    font-weight: bold;
-    background: #ffe6e6;
-    padding: 5px 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    color: #cc2244;
+    border: 2px dashed #ffcdcd;
 }
 
-@media (max-width: 500px) {
-    .container {
-        padding: 15px;
+.info-simulacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icone-info {
+    font-size: 1.5rem;
+}
+
+.texto-info {
+    color: #776666;
+    font-size: 0.9rem;
+}
+
+.dica-simulacao {
+    color: #886666;
+    font-size: 0.9rem;
+    background: rgba(255, 200, 200, 0.2);
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+/* Deixar bonito em telas pequenas */
+@media (max-width: 600px) {
+    .titulo-principal {
+        font-size: 2.2rem;
     }
-    h1 {
-        font-size: 1.6rem;
+    
+    .morango-gigante {
+        font-size: 70px;
     }
-    .info {
-        flex-direction: column;
+    
+    .btn-iniciar {
+        font-size: 1.1rem;
+        padding: 14px 35px;
+    }
+    
+    .header-jogo {
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 8px;
+        padding: 10px;
+    }
+    
+    .titulo-jogo {
+        font-size: 0.9rem;
+        order: -1;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .controles {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .decoracao-1,
+    .decoracao-2,
+    .decoracao-3,
+    .decoracao-4 {
+        display: none;
     }
 }

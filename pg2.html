@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍓 Simulação - Ciclo da Validação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Tela do jogo -->
+    <div class="tela-jogo">
+        
+        <!-- Cabeçalho -->
+        <div class="header-jogo">
+            <a href="index.html" class="btn-voltar">
+                ⬅ Voltar
+            </a>
+            <h2 class="titulo-jogo">
+                🍓 Ciclo da Validação
+            </h2>
+            <div class="status-jogo">
+                🎯 Validação: 0%
+            </div>
+        </div>
+        
+        <!-- Área onde o moranguinho vai andar -->
+        <div class="canvas-wrapper">
+            <canvas id="canvas-morango" width="600" height="400"></canvas>
+        </div>
+        
+        <!-- Informações de como funciona -->
+        <div class="controles">
+            <div class="info-simulacao">
+                <span class="icone-info">🍓</span>
+                <span class="texto-info">
+                    O moranguinho anda sozinho, representando uma ideia em validação
+                </span>
+            </div>
+            <div class="dica-simulacao">
+                💡 Observe como a ideia se move continuamente
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
