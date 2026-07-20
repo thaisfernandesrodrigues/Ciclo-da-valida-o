@@ -1,11 +1,11 @@
-/* Estilos fofos com tema de moranguinho */
-
+/* reset básico - tira as margens que o navegador coloca */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* corpo da página (fundo rosado e fonte) */
 body {
     font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
     min-height: 100vh;
@@ -13,8 +13,7 @@ body {
     overflow: hidden;
 }
 
-/* ===== TELA INICIAL ===== */
-
+/*tela inicial */
 .tela-inicial {
     min-height: 100vh;
     display: flex;
@@ -29,7 +28,7 @@ body {
     position: relative;
 }
 
-/* Morango grande que flutua */
+/* morango gigante que flutua */
 .morango-gigante {
     font-size: 100px;
     animation: flutuar 3s ease-in-out infinite;
@@ -37,13 +36,13 @@ body {
     margin-bottom: 10px;
 }
 
-/* Animação de flutuação do morango */
+/* animação de flutuação */
 @keyframes flutuar {
     0%, 100% { transform: translateY(0px) rotate(-2deg); }
     50% { transform: translateY(-15px) rotate(2deg); }
 }
 
-/* Título principal */
+/* título principal */
 .titulo-principal {
     font-size: 3.5rem;
     color: #442233;
@@ -52,7 +51,7 @@ body {
     letter-spacing: 2px;
 }
 
-/* Parte "Validação" em destaque */
+/* destaque da palavra "validação" */
 .titulo-principal .destaque {
     color: #dd3355;
     background: rgba(255, 200, 200, 0.3);
@@ -62,7 +61,7 @@ body {
     transform: rotate(-1deg);
 }
 
-/* Subtítulo */
+/* subtítulo */
 .subtitulo-inicial {
     font-size: 1.3rem;
     color: #996677;
@@ -74,7 +73,7 @@ body {
     border: 2px dashed #ffb0b0;
 }
 
-/* Caixa de descrição */
+/* caixa de descrição */
 .descricao {
     max-width: 500px;
     text-align: center;
@@ -89,7 +88,7 @@ body {
 .descricao p {
     color: #554444;
     font-size: 1.05rem;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 8px;
 }
 
@@ -97,7 +96,7 @@ body {
     margin-bottom: 0;
 }
 
-/* Botão de iniciar */
+/* botão de começar */
 .btn-iniciar {
     display: inline-block;
     background: linear-gradient(135deg, #ff5577, #dd3355);
@@ -114,19 +113,17 @@ body {
     border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Efeito ao passar o mouse no botão */
 .btn-iniciar:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 12px 35px rgba(200, 50, 50, 0.4);
     background: linear-gradient(135deg, #ff6688, #ee3355);
 }
 
-/* Efeito ao clicar no botão */
 .btn-iniciar:active {
     transform: translateY(0px) scale(0.98);
 }
 
-/* Decorações espalhadas pela tela */
+/* decorações */
 .decoracao-1 {
     position: absolute;
     top: 8%;
@@ -159,42 +156,43 @@ body {
     animation: flutuar 3.5s ease-in-out infinite 1s;
 }
 
-/* Animação de girar para as decorações */
 @keyframes girar {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* ===== TELA DO JOGO ===== */
-
+/*tela do jogo*/
 .tela-jogo {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
     background: 
         radial-gradient(ellipse at 30% 70%, #ffe8e8 0%, transparent 60%),
         radial-gradient(ellipse at 70% 30%, #ffdddd 0%, transparent 60%),
         #fff5f5;
+    position: relative;
 }
 
-/* Cabeçalho do jogo */
+/* cabeçalho do jogo */
 .header-jogo {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     max-width: 650px;
-    margin-bottom: 15px;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     border: 2px solid #ffcdcd;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-/* Botão de voltar */
+/* botão de voltar*/
 .btn-voltar {
     color: #dd3355;
     text-decoration: none;
@@ -210,14 +208,14 @@ body {
     background: rgba(255, 200, 200, 0.6);
 }
 
-/* Título do jogo */
+/* título do jogo */
 .titulo-jogo {
     font-size: 1.1rem;
     color: #442233;
     margin: 0;
 }
 
-/* Status de validação */
+/* status da validação */
 .status-jogo {
     background: #ffdddd;
     padding: 6px 16px;
@@ -228,18 +226,18 @@ body {
     border: 2px solid #ffbbbb;
 }
 
-/* Área do canvas */
+/* moldura do canvas */
 .canvas-wrapper {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 25px;
-    padding: 12px;
+    padding: 10px;
     box-shadow: 0 10px 40px rgba(200, 50, 50, 0.1);
     border: 3px solid #ffcdcd;
     max-width: 650px;
     width: 100%;
 }
 
-/* O canvas onde o morango anda */
+/* o canvas */
 canvas {
     display: block;
     width: 100%;
@@ -248,17 +246,17 @@ canvas {
     background: #fff5f5;
 }
 
-/* Informações na parte de baixo */
+/* controles/informações */
 .controles {
     width: 100%;
     max-width: 650px;
-    margin-top: 15px;
+    margin-top: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 12px 20px;
+    padding: 10px 18px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     border: 2px dashed #ffcdcd;
@@ -271,7 +269,7 @@ canvas {
 }
 
 .icone-info {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .texto-info {
@@ -281,13 +279,13 @@ canvas {
 
 .dica-simulacao {
     color: #886666;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     background: rgba(255, 200, 200, 0.2);
     padding: 5px 15px;
     border-radius: 15px;
 }
 
-/* Deixar bonito em telas pequenas */
+/* responsividade */
 @media (max-width: 600px) {
     .titulo-principal {
         font-size: 2.2rem;
@@ -302,10 +300,24 @@ canvas {
         padding: 14px 35px;
     }
     
+    .subtitulo-inicial {
+        font-size: 1rem;
+        padding: 6px 18px;
+    }
+    
+    .descricao {
+        padding: 18px 20px;
+        margin-bottom: 20px;
+    }
+    
+    .descricao p {
+        font-size: 0.95rem;
+    }
+    
     .header-jogo {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
+        gap: 6px;
         padding: 10px;
     }
     
@@ -316,10 +328,30 @@ canvas {
         text-align: center;
     }
     
+    .status-jogo {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+    
+    .btn-voltar {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    
     .controles {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 10px 14px;
+    }
+    
+    .texto-info {
+        font-size: 0.8rem;
+    }
+    
+    .dica-simulacao {
+        font-size: 0.75rem;
+        padding: 4px 12px;
     }
     
     .decoracao-1,
@@ -327,5 +359,20 @@ canvas {
     .decoracao-3,
     .decoracao-4 {
         display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+    
+    .morango-gigante {
+        font-size: 55px;
+    }
+    
+    .btn-iniciar {
+        font-size: 1rem;
+        padding: 12px 28px;
     }
 }
